@@ -22,17 +22,17 @@ export default function Gamecompo() {
 
     return (
         <>
-            <div className="">
+            <div className="App">
                 <h1>Animal Matching Game</h1>
-                <div className="">
+                <div className="header">
                     <h2>Find: {targetAnimal.name}</h2>
                 </div>
 
-                <div className="">
+                <div className="grid">
                     {animals.map((animal) => (
                         <div
                             key={animal.id}
-                            className=""
+                            className="card"
                             onClick={() => handleAnimalClick(animal.id)}
                         >
                             <img src={"/fig/"+animal.img} alt={animal.name} />
