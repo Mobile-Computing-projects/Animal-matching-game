@@ -1,9 +1,10 @@
 import './App.css';
+import Gamecomp from "./components/GameCompo";
 
 function App() {
   return (
     <div className="App">
-     <p>ready to start</p>
+      <Gamecomp></Gamecomp>
     </div>
   );
 }
