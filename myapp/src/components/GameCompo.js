@@ -35,7 +35,7 @@ export default function Gamecompo() {
                             className=""
                             onClick={() => handleAnimalClick(animal.id)}
                         >
-                            <img src={animal.image} alt={animal.name} />
+                            <img src={"/fig/"+animal.img} alt={animal.name} />
                             <p>{animal.name}</p>
                         </div>
                     ))}
