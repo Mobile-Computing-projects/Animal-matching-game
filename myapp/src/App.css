@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+th {
+  text-align: center;
+  width:100%;
+}
+
 header {
   border: 1px solid orange;
   text-transform: uppercase;
@@ -16,7 +21,6 @@ header {
  
 }
 
-
 .card {
   border: .5px solid #ddd;
   padding: 10px;
@@ -24,3 +28,16 @@ header {
   transition: transform 0.2s ease;
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+table,td,tr{
+  border-color:orange;
+  
+}

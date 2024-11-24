@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {animals} from "../assets/AnimalsDb";
+import { animals } from "../assets/AnimalsDb";
 
 export default function Gamecompo() {
     const [targetAnimal, setTargetAnimal] = useState(getRandomAnimal());
@@ -22,33 +22,48 @@ export default function Gamecompo() {
 
     return (
         <>
-            <div className="App">
-                <h1>Animal Matching Game</h1>
-                <div className="header">
-                    <h2>Find: {targetAnimal.name}</h2>
+            <table border='1'>
+
+                <div className="App">
+                    <tr >
+                    <th colSpan={3}>
+                        <p>Animal Matching Game</p>
+                    </th>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            {result && (
+                                <div className="">
+                                    <h2>{result}</h2>
+                                    <button onClick={restartGame}>Play Again</button>
+                                </div>
+                            )}
+
+                        </td>
+                        <td>
+                            <div className="header">
+                                <h2>Find: {targetAnimal.name}</h2>
+                            </div>
+                        </td>
+                        <td>
+                            <div className="grid">
+                                {animals.map((animal) => (
+                                    <div
+                                        key={animal.id}
+                                        className="card"
+                                        onClick={() => handleAnimalClick(animal.id)}
+                                    >
+                                        <img src={"/fig/" + animal.img} alt={animal.name} />
+                                        <p>{animal.name}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </td>
+
+                    </tr>
                 </div>
-
-                <div className="grid">
-                    {animals.map((animal) => (
-                        <div
-                            key={animal.id}
-                            className="card"
-                            onClick={() => handleAnimalClick(animal.id)}
-                        >
-                            <img src={"/fig/"+animal.img} alt={animal.name} />
-                            <p>{animal.name}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {result && (
-                    <div className="">
-                        <h2>{result}</h2>
-                        <button onClick={restartGame}>Play Again</button>
-                    </div>
-                )}
-
-            </div>
+            </table>
         </>
     );
 }
