@@ -9,7 +9,7 @@ export default function Gamecompo() {
         return animals[randomIndex];
     }
     const handleAnimalClick = (id) => {
-        if (id === targetAnimal.id) {
+        if (id === targetAnimal.name) {
             setResult("Win");
         } else {
             setResult("Lose");
@@ -27,23 +27,25 @@ export default function Gamecompo() {
                 <div className="App">
                     <tr >
                     <th colSpan={3}>
-                        <p>Animal Matching Game</p>
+                        <h1>Animal Matching Game</h1>
                     </th>
                     </tr>
                     <tr>
                         <td>
 
-                            {result && (
-                                <div className="">
-                                    <h2>{result}</h2>
+                            
+                                <div className="result">
+                                    <h2>Result</h2>
+                                    <p className={result==="Win"?"green":"orange"}>{result}</p>
                                     <button onClick={restartGame}>Play Again</button>
                                 </div>
-                            )}
+                            
 
                         </td>
                         <td>
                             <div className="header">
-                                <h2>Find: {targetAnimal.name}</h2>
+                                <h2>Animal name<br/></h2>
+                                <p className="orange"> <b>{targetAnimal.name}</b> </p>
                             </div>
                         </td>
                         <td>
@@ -52,10 +54,10 @@ export default function Gamecompo() {
                                     <div
                                         key={animal.id}
                                         className="card"
-                                        onClick={() => handleAnimalClick(animal.id)}
+                                        onClick={() => handleAnimalClick(animal.name)}
                                     >
                                         <img src={"/fig/" + animal.img} alt={animal.name} />
-                                        <p>{animal.name}</p>
+                                        
                                     </div>
                                 ))}
                             </div>

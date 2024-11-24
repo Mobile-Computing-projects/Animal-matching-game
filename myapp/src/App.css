@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width:100vw
 }
 
 th {
@@ -10,6 +11,17 @@ th {
 header {
   border: 1px solid orange;
   text-transform: uppercase;
+  width:150px;
+}
+
+.green{
+  color:#45a049;
+  font-size:x-large;
+  
+}
+.orange{
+  color:orange;
+  font-size:x-large;
 }
 
 .grid {
@@ -25,19 +37,29 @@ header {
   border: .5px solid #ddd;
   padding: 10px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
   height: auto;
 }
-
+table{
+  width:100%;
+}
 table,td,tr{
-  border-color:orange;
+  border-color:orange; 
   
 }
+
+.result {
+  width:150px;
+}
+
+.result button {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
